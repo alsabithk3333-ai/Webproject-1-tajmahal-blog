@@ -5,4 +5,8 @@ this project is build using html and css only
 since i built this project using android phone it have its limit
 however i am very satisfied with my work. 
 Tank you
-here is the link to blog:
+here is the link to blog: [
+
+![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-gold?style=for-the-badge)
+
+](https://alsabithk3333-ai.github.io/Webproject-1-tajmahal-blog/)
