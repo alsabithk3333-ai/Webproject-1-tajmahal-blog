@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --gold: #c9a84c;
+  --cream: #f5f0e8;
+  --dark: #1a1410;
+  
+}
+body {
+  font-family: 'Cormorant Garamond',Sans-Serif,Verdana;
+  background: var(--cream);
+  color: var(--dark);
+  
+}
+#bg0 {
+  width: 100%;
+  height: 100vh;
+  background-image: url('images/taj1.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+#box {
+  width: 100%;
+  height: 400px;
+  background-color: black;
+}
+#bg0::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%,rgba(0,0,0,0.50) 100%); */
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(245,240,232,1) 100%);
+}
+/* nav */
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  padding: 1.4rem 3rem ;
+  z-index: 100;
+  
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+nav h1{
+  font-family: 'Cinzel',serif,Verdana;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  
+}
+nav ul a{
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+nav ul a:hover {
+  color: var(--gold);
+}
+.hero-text{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.hero-text h2{
+  font-family: 'Cinzel',serif;
+  font-size: clamp(2.5rem,7vw,5.5rem);
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.2em;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  line-height: 1.1;
+}
+.hero-text p{
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+/* content */
+#content{
+  background: var(--cream);
+  padding: 5rem 2rem 4rem;
+}
+.section-label{
+  text-align: center;
+  font-family: 'Cinzel',serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+}
+.cards{
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card{
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease,box-shadow 0.4s ease;
+}
+.card:hover{
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+}
+.card-img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  background: #c5b89a;
+}
+.card-body{
+  padding: 1.8rem 2rem 2.2rem;
+  background: #fff;
+}
+.card-tag{
+  font-family: 'Cinzel',serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.card-body h3{
+  font-family: 'Cinzel',serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  color: var(--dark);
+}
+.card-body p{
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4a3f32;
+  font-weight: 300;
+}
+.card-line{
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1rem 0;
+}
+.card::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,transparent 30%,rgba(201,168,76,0.08) 50%,transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 2;
+  pointer-events: none;
+}
+.card:hover::before{
+  opacity: 1;
+}
+/* divider */
+.divider{
+  text-align: center;
+  margin: 4rem auto;
+  color: var(--gold);
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  opacity: 0.5;
+}
+/* footer */
+footer{
+  background: var(--dark);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+footer span{
+  color: var(--gold);
+  font-style: italic;
+}
